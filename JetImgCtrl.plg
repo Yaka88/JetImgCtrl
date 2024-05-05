@@ -1,0 +1,53 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: JetImgCtrl - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\Temp\RSP1A7.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /FR"Release/" /Fp"Release/JetImgCtrl.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\VCProjects\JetImgCtrl\DrawDIB.cpp"
+]
+Creating command line "cl.exe @D:\Temp\RSP1A7.tmp" 
+Creating temporary file "D:\Temp\RSP1A8.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:no /pdb:"Release/JetImgCtrl.pdb" /machine:I386 /def:".\JetImgCtrl.def" /out:"Release/JetImgCtrl.ocx" /implib:"Release/JetImgCtrl.lib" 
+.\Release\DrawDIB.obj
+.\Release\DrawElement.obj
+.\Release\JetImgCtrl.obj
+.\Release\JetImgCtrlCtl.obj
+.\Release\JetImgCtrlPpg.obj
+.\Release\MyLine.obj
+.\Release\MyPoint.obj
+.\Release\MyRect.obj
+.\Release\MyText.obj
+.\Release\SingleImg.obj
+.\Release\StdAfx.obj
+.\Release\JetImgCtrl.res
+.\JetImgSee.lib
+]
+Creating command line "link.exe @D:\Temp\RSP1A8.tmp"
+Creating temporary file "D:\Temp\RSP1A9.bat" with contents
+[
+@echo off
+regsvr32 /s /c ".\Release\JetImgCtrl.ocx"
+echo regsvr32 exec. time > ".\Release\regsvr32.trg"
+]
+Creating command line "D:\Temp\RSP1A9.bat"
+Compiling...
+DrawDIB.cpp
+Linking...
+   Creating library Release/JetImgCtrl.lib and object Release/JetImgCtrl.exp
+<h3>Output Window</h3>
+Registering ActiveX Control...
+
+
+
+<h3>Results</h3>
+JetImgCtrl.ocx - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

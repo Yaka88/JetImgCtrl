@@ -1,0 +1,126 @@
+// JetImgCtrl.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (JetImgCtrl.tlb) that will become a resource in
+// JetImgCtrl.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(48505D5B-CA60-4A5B-BB22-6EEC2D304103), version(1.0),
+  helpfile("JetImgCtrl.hlp"),
+  helpstring("JetImgCtrl ActiveX Control module"),
+  control ]
+library JETIMGCTRLLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CJetImgCtrlCtrl
+
+	[ uuid(9991E755-7AFA-4E3B-8056-CF723D978F3F),
+	  helpstring("Dispatch interface for JetImgCtrl Control"), hidden ]
+	dispinterface _DJetImgCtrl
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CJetImgCtrlCtrl)
+			[id(1)] OLE_COLOR OutLineColor;
+			[id(2)] OLE_COLOR ImgBackColor;
+			[id(3)] boolean Magnify;
+			[id(4)] short Col;
+			[id(5)] short Row;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CJetImgCtrlCtrl)
+			[id(6)] void SetMaxImg(short p_nRow, short p_nCol);
+			[id(7)] short GetDrawState(short p_nNo);
+			[id(8)] short GetMaxImg();
+			[id(9)] short GetCurImgNum();
+			[id(10)] short CoverImgFile(BSTR lpszFileName, long p_nPosition);
+			[id(11)] short AddImgFile(BSTR lpszFileName, short p_nPosition);
+			[id(12)] short AddImgDib(long p_hdib, short p_nPosition);
+			[id(13)] short CoverImgDib(long p_hdib, short p_nPosition);
+			[id(14)] short SetFocus(short p_nFocus);
+			[id(15)] short GetFocus();
+			[id(16)] void ClearAllImg();
+			[id(17)] short SetReferPoint(long p_nReferx, long p_nRefery, short p_nKind, short p_nNo);
+			[id(18)] short SetElementColor(short ColorR, short ColorG, short ColorB, short p_nKind, short p_nNo);
+			[id(19)] short ShowLine(long p_nStartx, long p_nStarty, long p_nEndx, long p_nEndy, long p_lpData, short p_nNo);
+			[id(20)] short ShowPoint(long p_nx, long p_ny, long p_nDia, long p_lpData, short p_nNo);
+			[id(21)] short ShowRect(long p_nOriginx, long p_nOriginy, long p_nWidth, long p_nHeight, long p_lpData, short p_nNo);
+			[id(22)] short ShowText(long p_nOriginx, long p_nOriginy, long p_nWidth, long p_nHeight, long p_lpData, BSTR pa_lpszText, short p_nNo);
+			[id(23)] short GetItemData(long* p_pOutData, short p_nKind, long p_nItem, short p_nNo);
+			[id(24)] short GetDrawPoint(long p_nItem, long* p_pnOutx, long* p_pnOuty, short p_nNo);
+			[id(25)] short GetDrawLine(long p_nItem, long* p_pnOStartx, long* p_pnOStarty, long* p_pnOEndx, long* p_pnOEndy, short p_nNo);
+			[id(26)] short GetDrawRect(long p_nItem, long* p_pnOOriginx, long* p_pnOOriginy, long* p_pnOWidth, long* p_pnOHeight, short p_nNo);
+			[id(27)] short GetMousePosition(long p_x, long p_y);
+			[id(28)] short DeleteElement(long p_nItem, short p_nDrawState, short p_nNo);
+			[id(29)] short SetItemData(long p_pData, short p_nKind, long p_nItem, short p_nNo);
+			[id(30)] short EnsureElementVisible(long p_nItem, short p_nKind, short p_nNo);
+			[id(31)] short SetShowRuler(boolean p_bShowRuler, short p_nNo);
+			[id(32)] short SetShowState(short p_nShowState, short p_nNo);
+			[id(33)] short GetShowState(short p_nNo);
+			[id(34)] short SetDrawState(short p_nDrawState, short p_nNo);
+			[id(35)] void RefreshImg();
+			[id(36)] short GetElementNum(short* p_nOutNum, short p_nKind, short p_nNo);
+			[id(37)] short GetDrawText(long p_nItem, long* p_pnOOriginx, long* p_pnOOriginy, long* p_pnOWidth, long* p_pnOHeight, BSTR p_lpOText, short* p_pnLen, short p_nNo);
+			[id(38)] short RotateImg(short p_nNo, double p_dAngle, short p_nMode, boolean p_bInterpolate, boolean p_bContinue);
+			[id(39)] short StretchImg(short p_nNo, double p_fZoom, boolean p_bContinue);
+			[id(40)] void SetShowRatio(float* p_fpWidthRatio, float* p_fpHeightRatio);
+			[id(41)] void SetMagnifer(boolean p_bMagnify, short p_nOffsetx, short p_nOffsety, short p_nWidth, short p_nHeight);
+			[id(42)] void SetText(boolean p_nNeedBack, short p_nEditType, VARIANT* pa_lpString, short p_iCount);
+			[id(43)] void SetTextNeedBack(boolean p_bNeedBack);
+			[id(44)] short PrintImg(short p_nNo, float p_fZoom, short p_nPointx, short p_nPointy);
+			[id(45)] short PrintImage(short p_nNo, long p_nWidth, long p_nHeight, short p_nPointx, short p_nPointy);
+			[id(46)] short RotateImage(short p_nNo, short p_dAngle, short p_bContinue);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CJetImgCtrlCtrl
+
+	[ uuid(E9686592-11F0-41F2-BBCD-E8D33C8F9263),
+	  helpstring("Event interface for JetImgCtrl Control") ]
+	dispinterface _DJetImgCtrlEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CJetImgCtrlCtrl)
+			[id(1)] void ClickImg(long p_x, long p_y);
+			[id(2)] void ElementGetFocus(long p_nItem, short p_nDrawState);
+			[id(3)] void ElementLoseFocus(long p_nItem, short p_nDrawState);
+			[id(4)] void BeginModify(long p_nItem, short p_nDrawState);
+			[id(5)] void BeginDrawNew(short p_nDrawState);
+			[id(6)] void EndDrawNew(long p_nItem, short p_nDrawState);
+			[id(7)] void EndModify(long p_nItem, short p_nDrawState);
+			[id(8)] void OnDrawing(short p_nDrawState);
+			[id(9)] void OnModifying(long p_nItem, short p_nDrawState);
+			[id(10)] void OnDraw(long p_pDC);
+			[id(DISPID_DBLCLICK)] void DblClick();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CJetImgCtrlCtrl
+
+	[ uuid(C51F7B20-3D4A-483E-B698-04B2253189D3),
+	  helpstring("JetImgCtrl Control"), control ]
+	coclass JetImgCtrl
+	{
+		[default] dispinterface _DJetImgCtrl;
+		[default, source] dispinterface _DJetImgCtrlEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};
